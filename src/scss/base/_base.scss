@@ -1,0 +1,22 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+html, body {
+  height: 100%;
+  font-family: $font-primary;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: $primary-color;
+  color: $white;
+}
+
+b {
+    font-weight: bold;
+}

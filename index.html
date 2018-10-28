@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,700" rel="stylesheet">
+  <title>I-konsultācijas - saruna ar ekspertu</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
+  <script src="https://code.angularjs.org/1.7.5/angular-route.js"></script>
+  <link rel="stylesheet" href="public/style.min.css">
+</head>
+
+<body ng-controller="main">
+
+    <header class="header js-header">
+        <div class="header__inner container">
+
+            <div class="header__logo">
+                <a href="/">
+                    <h4>i-konsultācijas</h4>
+                </a>
+            </div>
+
+            <nav class="header__nav">
+                <ul>
+                    <li class="header__nav__item"><a href="/">Galvenā</a></li>
+
+                    <li class="header__nav__item"><a href="/list">Eksperti</a></li>
+
+                    <li class="header__nav__item"><a href="/info">Informācija un padomi</a></li>
+
+                    <li class="header__nav__item"><a href="/apply">Pieteikties par ekspertu</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <div ng-view></div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="public/script.min.js"></script>
+</body>
+</html>

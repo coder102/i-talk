@@ -1,0 +1,40 @@
+.list {
+    &__search {
+        padding: 20px 0;
+        background: $primary-color;
+        color: $secondary-color;
+    }
+
+    &__item {
+        &__image {
+            float: left;
+            width: 200px;
+            height: 200px;
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        &__text {
+            float: left;
+            padding-left: 15px;
+            width: calc(100% - 200px);
+
+            &__headings {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            span {
+                font-size: 1.2rem;
+            }
+
+            p {
+                font-size: 1.6rem;
+                line-height: 1.6;
+                text-align: justify;
+            }
+        }
+    }
+}

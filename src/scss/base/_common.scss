@@ -1,0 +1,47 @@
+.stars {
+    display: inline-block;
+    font-size: 0;
+
+    &__star {
+        display: inline-block;
+        margin: 0 2px;
+        font-size: 2rem;
+        color: $gold;
+    }
+}
+
+.button {
+    position: relative;
+    padding: 15px 20px;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    font-weight: 700;
+    font-size: 1.3rem;
+    border: 3px solid rgba(255, 255, 255, 0.6);
+    display: inline-block;
+
+    span {
+        position: relative;
+        z-index: 2;
+    }
+
+    &:hover {
+        &::before {
+            width: 100%;
+        }
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+
+        width: 0;
+        height: 100%;
+
+        background: rgba(0, 0, 0, 0.5);
+        transition: .3s;
+    }
+}
