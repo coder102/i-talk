@@ -1,3 +1,18 @@
 {
-    "title": "i-talk"
+    "title": "i-talk",
+    "navMain": "Home",
+    "navExperts": "Experts",
+    "navInfo": "Information and advices",
+    "navApply": "Become expert",
+
+    "heroTitleSmall": "Do you have questions about any field?",
+    "heroTitle": "Talk with an expert",
+    "heroTitleInner": "All experts",
+    "heroExpert": "Expert",
+    "heroSpan": "And get experience",
+    "heroBtn": "Read about experts",
+
+    "aboutSpan": "I-Talk",
+    "aboutTitle": "Who needs conversation with an expert?",
+    "aboutDesc": "People who plan to start working in any sphere, starting business have a lot of questions. This is reason why I-Talk was made."
 }

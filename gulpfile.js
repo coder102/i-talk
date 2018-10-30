@@ -8,6 +8,7 @@ const gulp = require('gulp'),
       autoprefixer = require('gulp-autoprefixer'),
       imagemin = require('gulp-imagemin'),
       cache = require('gulp-cache'),
+      babel = require('gulp-babel'),
       del = require('del'),
       runSequence = require('run-sequence');
 
@@ -47,7 +48,8 @@ gulp.task('watch', () => {
 // ------------------
 
 gulp.task('js', () => {
-  return gulp.src('src/js/**/*.js')
+  return gulp.src('src/js/*.js')
+  .pipe(babel())
   .pipe(uglify())
   .pipe(concat('script.min.js'))
   .pipe(gulp.dest('public'));

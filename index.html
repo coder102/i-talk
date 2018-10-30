@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="app">
+<html lang="{{lang}}" ng-app="app">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +8,9 @@
   <title>I-konsultācijas - saruna ar ekspertu</title>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
   <script src="https://code.angularjs.org/1.7.5/angular-route.js"></script>
+  <script src="src/js/vendor/angular-translate.js"></script>
+  <script src="src/js/vendor/angular-translate-handler-log.min.js"></script>
+  <script src="src/js/vendor/angular-translate-loader-static-files.min.js"></script>
   <link rel="stylesheet" href="public/style.min.css">
 </head>
 
@@ -24,13 +27,17 @@
 
             <nav class="header__nav">
                 <ul>
-                    <li class="header__nav__item"><a href="/">Galvenā</a></li>
+                    <li class="header__nav__item"><a href="/" translate="navMain"></a></li>
 
-                    <li class="header__nav__item"><a href="/list">Eksperti</a></li>
+                    <li class="header__nav__item"><a href="/list" translate="navExperts"></a></li>
 
-                    <li class="header__nav__item"><a href="/info">Informācija un padomi</a></li>
+                    <li class="header__nav__item"><a href="/info" translate="navInfo"></a></li>
 
-                    <li class="header__nav__item"><a href="/apply">Pieteikties par ekspertu</a></li>
+                    <li class="header__nav__item"><a href="/apply" translate="navApply"></a></li>
+
+                    <li class="header__nav__item"><a ng-click="changeLanguage('lv')" ng-show="lang == 'en'">LV</a></li>
+
+                    <li class="header__nav__item"><a ng-click="changeLanguage('en')" ng-show="lang == 'lv'">EN</a></li>
                 </ul>
             </nav>
 
@@ -40,19 +47,40 @@
     <main ng-view></main>
 
     <footer class="footer">
+        <div class="container">
+            <div class="row">
 
-        <nav class="footer__nav">
-            <ul>
-                <li class="footer__nav__item"><a href="/">Galvenā</a></li>
+                <div class="col-sm-10 offset-sm-1">
 
-                <li class="footer__nav__item"><a href="/list">Eksperti</a></li>
+                    <nav class="footer__nav">
+                        <ul>
+                            <li class="footer__nav__item"><a href="/" translate="navMain"></a></li>
 
-                <li class="footer__nav__item"><a href="/info">Informācija un padomi</a></li>
+                            <li class="footer__nav__item"><a href="/list" translate="navExperts"></a></li>
 
-                <li class="footer__nav__item"><a href="/apply">Pieteikties par ekspertu</a></li>
-            </ul>
-        </nav>
+                            <li class="footer__nav__item"><a href="/info" translate="navInfo"></a></li>
 
+                            <li class="footer__nav__item"><a href="/apply" translate="navApply"></a></li>
+                        </ul>
+                    </nav>
+
+                </div>
+
+                <div class="col-sm-10 offset-sm-1">
+
+                    <nav class="footer__socials">
+                        <ul>
+                            <li class="footer__socials__item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li class="footer__socials__item"><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        </ul>
+                    </nav>
+
+                </div>
+
+            </div>
+
+            <p>Copyright I-Talk 2018</p>
+        </div>
     </footer>
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

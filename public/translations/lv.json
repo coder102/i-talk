@@ -1,3 +1,18 @@
 {
-    "title": "i-konsultācijas"
+    "title": "i-konsultācijas",
+    "navMain": "Galvenā",
+    "navExperts": "Eksperti",
+    "navInfo": "Informācija un padomi",
+    "navApply": "Pieteikties par ekspertu",
+
+    "heroTitleSmall": "Ir jautājumi par noteiktu sfēru?",
+    "heroTitle": "Parunā ar ekspertu",
+    "heroTitleInner": "Visi ekspeti",
+    "heroExpert": "Eksperts",
+    "heroSpan": "Un saņem nenovērtējamu pieredzi",
+    "heroBtn": "Skatīt ekspertus",
+
+    "aboutSpan": "I-Konsultācijas",
+    "aboutTitle": "Kam ir aktuāla saruna ar ekspertu?",
+    "aboutDesc": "Cilvēkam, kurš plāno strādāt jaunā sfērā vai uzskākt biznesu, bieži vien rodas jautājumi, kurus gribētu uzdot cilvēkam, kas kaut ko sasniedza noteiktā sfērā. Šim nolūkam tika izveidots i-konsultācijas portāls."
 }

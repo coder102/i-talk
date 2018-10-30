@@ -25,11 +25,11 @@ app.config([
 
     $translateProvider
         .useStaticFilesLoader({
-            prefix: 'translations',
+            prefix: '/public/translations/',
             suffix: '.json'
         })
-        .preferredLanguage('en')
-        useMissingTranslationHandlerLog();
+        .preferredLanguage('en');
+        // useMissingTranslationHandlerLog();
 }]);
 
 // =========================================
@@ -97,13 +97,14 @@ app.filter('loop', function () {
 // -------------- Controllers --------------
 // =========================================
 
-app.controller('main', ['$scope', 'expertsFactory', function ($scope, expertsFactory) {
+app.controller('main', ['$scope', 'expertsFactory', '$translate', function ($scope, expertsFactory, $translate) {
 
-    $scope.nav = [
-        {
-            name: 'Galvenā'
-        }
-    ]
+    $scope.lang = 'en';
+
+    $scope.changeLanguage = function (langKey) {
+        $translate.use(langKey);
+        $scope.lang = langKey;
+    }
 
 }]);
 
@@ -131,7 +132,7 @@ var $header = $('.js-header'),
     isActiveHeader = false;
 
 $(document).on('scroll', function (e) {
-    var isTop = $(window).scrollTop() === 0;
+    var isTop = $(window).scrollTop() < 40;
 
     if(!isActiveHeader && !isTop) {
         $header.addClass('header--active');
