@@ -1,0 +1,27 @@
+.footer {
+    width: 100%;
+    padding: 50px 0 10px;
+    background-color: #000;
+    color: $secondary-color;
+
+    &__nav {
+        column: 3;
+        -webkit-columns: 3;
+        -moz-columns: 3;
+
+        &__item {
+            padding-bottom: 8px;
+        }
+    }
+
+    &__socials {
+        margin-top: 15px;
+        text-align: center;
+
+        &__item {
+            display: inline-block;
+            margin-right: 10px;
+            font-size: 2rem;
+        }
+    }
+}
