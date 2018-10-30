@@ -40,16 +40,18 @@ gulp.task('watch', () => {
   gulp.watch('src/scss/**/*.scss', ['sass']);
   // gulp.watch('src/*.html', browserSync.reload);
   gulp.watch('src/js/**/*.js', ['js']);// browserSync.reload);
+  gulp.watch('src/translations/*.json', ['translate']);
 });
 
 // Optimization Tasks
 // ------------------
 
 gulp.task('js', () => {
-  return gulp.src('src/js/*.js')
+  return gulp.src('src/js/**/*.js')
   .pipe(uglify())
   .pipe(concat('script.min.js'))
   .pipe(gulp.dest('public'));
+  // .pipe(browserSync.reload());
 });
 
 // Optimizing Images
@@ -79,11 +81,16 @@ gulp.task('clean:public', () => {
   return del.sync(['public/**/*', '!public/images', '!public/images/**/*']);
 });
 
+gulp.task('translate', () => {
+  return gulp.src('src/translations/**/*')
+    .pipe(gulp.dest('public/translations'));
+});
+
 // Build Sequences
 // ---------------
 
 gulp.task('default', (callback) => {
-  runSequence(['sass', 'js', 'browserSync'], 'watch',
+  runSequence(['sass', 'js', 'translate', 'browserSync'], 'watch',
     callback
   );
 });

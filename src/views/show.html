@@ -1,0 +1,50 @@
+<section class="hero hero--inner">
+    <div class="container">
+
+        <h5 class="hero__title--small">Ir jautājumi par noteiktu sfēru?</h5>
+        <h2 class="hero__title">Eksperts - {{expert.name}}</h2>
+        <!-- <span class="hero__title--smallest js-text-change">Šobrīd tiek meklēti eksperti dažādās jomās..</span> -->
+        <div class="clear"></div>
+        <a class="button mt35" href="/list"><span>Skatīt ekspertus</span></a>
+
+    </div>
+</section>
+
+<section class="list">
+    <div class="container">
+
+        <div class="col-md-12 list__item mb30">
+            <div class="list__item__image" style="background-image: url({{expert.image || defaultImageSrc}})"></div>
+
+            <div class="list__item__text">
+
+                <div class="list__item__text__headings">
+
+                    <div>
+                        <h6>{{expert.name}} <span>{{expert.lang ? '(' + expert.lang + ')': null}}</span></h6>
+                        <h5 class="mtb10">{{expert.career}} ({{category.name}})</h5>
+                    </div>
+
+                    <div>
+                        <ul class="stars">
+                            <li ng-repeat="star in expert.stars | loop" class="stars__star"><i class="fa fa-star"></i></li>
+                            <li ng-show="expert.stars % 1 !== 0" class="stars__star"><i class="fa fa-star-half-o"></i></li>
+                            <li ng-repeat="star in (5 - expert.stars) | loop" class="stars__star"><i class="stars__star--o fa fa-star-o"></i></li>
+                        </ul>
+
+                        <span>({{expert.ratings}})</span>
+                    </div>
+
+                </div>
+
+                <p>{{expert.desc}}</p>
+
+                <p ng-show="expert.desc2" class="desc--small"><b>Par mani:</b> {{expert.desc2}}</p>
+
+                <a href="/list" class="button">Atpakaļ</a>
+            </div>
+
+        </div>
+
+    </div>
+</section>
