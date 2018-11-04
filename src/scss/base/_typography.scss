@@ -33,7 +33,7 @@ p {
     &--smaller {
         font-size: 1.2rem;
     }
-    
+
     &--small {
         font-size: 1.3rem;
         font-weight: 300;
@@ -43,5 +43,11 @@ p {
     &--medium {
         font-size: 1.6rem;
         line-height: 1.6;
+    }
+
+    &--link {
+        &:hover {
+            text-decoration: underline;
+        }
     }
 }

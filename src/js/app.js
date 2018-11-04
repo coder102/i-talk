@@ -7,15 +7,19 @@ app.config([
     function ($routeProvider, $locationProvider, $translateProvider) {
 
     $routeProvider
-        .when('/view/:categoryId/:expertId', {
-            templateUrl: '/src/views/show.html',
-            controller: 'showCtrl'
-        })
         .when('/', {
             templateUrl: '/src/views/main.html'
         })
         .when('/list', {
             templateUrl: '/src/views/list.html'
+        })
+        .when('/list/:categoryId/:expertId', {
+            templateUrl: '/src/views/show.html',
+            controller: 'showCtrl'
+        })
+        .when('/order/:categoryId/:expertId', {
+            templateUrl: '/src/views/order.html',
+            controller: 'orderCtrl'
         });
 
     $locationProvider.html5Mode({

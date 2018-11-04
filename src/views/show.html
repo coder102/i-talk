@@ -14,6 +14,10 @@
     <div class="container">
         <div class="row">
 
+            <div class="col-md-12 mb20">
+                <a href="/list" class="button button--fill button--small" translate="showBack"></a>
+            </div>
+
             <div class="col-md-12 list__item mb30">
                 <div class="list__item__image" style="background-image: url({{expert.image || defaultImageSrc}})"></div>
 
@@ -23,7 +27,7 @@
 
                         <div>
                             <h6>{{expert.name}} <span>{{expert.lang ? '(' + expert.lang + ')': null}}</span></h6>
-                            <h5 class="mtb10">{{expert.career}} ({{category.name}})</h5>
+                            <h5 class="mtb10">{{expert.career}}</h5>
                         </div>
 
                         <div>
@@ -42,9 +46,9 @@
 
                     <p ng-show="expert.desc2" class="desc--small">{{expert.desc2}}</p>
 
-                    <a href="/list" class="button button--fill button--small" translate="showBack"></a>
+                    <!-- <a href="/list" class="button button--fill button--small" translate="showBack"></a> -->
 
-                    <a href="/order" class="button button--fill button--small" translate="showOrder"></a>
+                    <a href="/order/{{categoryIndex}}/{{expertIndex}}" class="button button--fill button--small" translate="showOrder"></a>
 
                     <div class="mt40">
                         <table class="table">
@@ -67,5 +71,19 @@
             </div>
 
         </div>
+    </div>
+</section>
+
+<section class="about">
+    <div class="container">
+
+        <h5>Saņem nenovērtējamu pieredzi IT nozarē</h5>
+
+        <h1 class="mtb25">Pajautā sev interesējošus jautājumus</h1>
+
+        <p>Ja pat tev nav jautājumu, eksperts ar prieku izstāstīs par profesiju, attīstību.</p>
+
+        <a href="order" class="button button--fill">Iegūt atbildes</a>
+
     </div>
 </section>

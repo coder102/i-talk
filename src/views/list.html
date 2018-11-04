@@ -51,7 +51,7 @@
 
                             <div>
                                 <h6>{{expert.name}} <span class="text--smaller">{{expert.lang ? '(' + expert.lang + ')': null}}</span></h6>
-                                <h5 class="mtb10">{{expert.career}} ({{category.name}})</h5>
+                                <h5 class="mtb10"><a class="text--link" href="/list/{{categoryIndex}}/{{expertIndex}}">{{expert.career}}</a></h5>
                             </div>
 
                             <div>
@@ -70,7 +70,9 @@
 
                         <p ng-show="expert.desc2" class="text--small list__item__text__desc-small">{{expert.desc2 | limitTo:160}}{{expert.desc2.length > 160 ? '...' : null}}</p>
 
-                        <a href="/view/{{categoryIndex}}/{{expertIndex}}" class="button button--small button--fill" translate="listReadMore"></a>
+                        <a href="/list/{{categoryIndex}}/{{expertIndex}}" class="button button--small button--fill" translate="listReadMore"></a>
+
+                        <a href="/order/{{categoryIndex}}/{{expertIndex}}" class="button button--small button--fill">Speak 30min</a>
                     </div>
 
                 </div>
