@@ -10,41 +10,62 @@
     </div>
 </section>
 
-<section class="list">
+<section class="list list--show">
     <div class="container">
+        <div class="row">
 
-        <div class="col-md-12 list__item mb30">
-            <div class="list__item__image" style="background-image: url({{expert.image || defaultImageSrc}})"></div>
+            <div class="col-md-12 list__item mb30">
+                <div class="list__item__image" style="background-image: url({{expert.image || defaultImageSrc}})"></div>
 
-            <div class="list__item__text">
+                <div class="list__item__text">
 
-                <div class="list__item__text__headings">
+                    <div class="list__item__text__headings">
 
-                    <div>
-                        <h6>{{expert.name}} <span>{{expert.lang ? '(' + expert.lang + ')': null}}</span></h6>
-                        <h5 class="mtb10">{{expert.career}} ({{category.name}})</h5>
+                        <div>
+                            <h6>{{expert.name}} <span>{{expert.lang ? '(' + expert.lang + ')': null}}</span></h6>
+                            <h5 class="mtb10">{{expert.career}} ({{category.name}})</h5>
+                        </div>
+
+                        <div>
+                            <ul class="stars">
+                                <li ng-repeat="star in expert.stars | loop" class="stars__star"><i class="fa fa-star"></i></li>
+                                <li ng-show="expert.stars % 1 !== 0" class="stars__star"><i class="fa fa-star-half-o"></i></li>
+                                <li ng-repeat="star in (5 - expert.stars) | loop" class="stars__star"><i class="stars__star--o fa fa-star-o"></i></li>
+                            </ul>
+
+                            <span>({{expert.ratings}})</span>
+                        </div>
+
                     </div>
 
-                    <div>
-                        <ul class="stars">
-                            <li ng-repeat="star in expert.stars | loop" class="stars__star"><i class="fa fa-star"></i></li>
-                            <li ng-show="expert.stars % 1 !== 0" class="stars__star"><i class="fa fa-star-half-o"></i></li>
-                            <li ng-repeat="star in (5 - expert.stars) | loop" class="stars__star"><i class="stars__star--o fa fa-star-o"></i></li>
-                        </ul>
+                    <p>{{expert.desc}}</p>
 
-                        <span>({{expert.ratings}})</span>
+                    <p ng-show="expert.desc2" class="desc--small">{{expert.desc2}}</p>
+
+                    <a href="/list" class="button button--fill button--small" translate="showBack"></a>
+
+                    <a href="/order" class="button button--fill button--small" translate="showOrder"></a>
+
+                    <div class="mt40">
+                        <table class="table">
+                            <tr>
+                                <td></td>
+                                <td>30min</td>
+                                <td>45min</td>
+                            </tr>
+                            <tr>
+                                <td>Cena</td>
+                                <td><b>4.49€</b></td>
+                                <td>6.49€</td>
+                            </tr>
+                        </table>
                     </div>
-
                 </div>
 
-                <p>{{expert.desc}}</p>
+                <!-- TODO: Add section with 'Kā tas strādā?', '' -->
 
-                <p ng-show="expert.desc2" class="desc--small"><b>Par mani:</b> {{expert.desc2}}</p>
-
-                <a href="/list" class="button">Atpakaļ</a>
             </div>
 
         </div>
-
     </div>
 </section>

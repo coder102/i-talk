@@ -14,5 +14,14 @@
 
     "aboutSpan": "I-Konsultācijas",
     "aboutTitle": "Kam ir aktuāla saruna ar ekspertu?",
-    "aboutDesc": "Cilvēkam, kurš plāno strādāt jaunā sfērā vai uzskākt biznesu, bieži vien rodas jautājumi, kurus gribētu uzdot cilvēkam, kas kaut ko sasniedza noteiktā sfērā. Šim nolūkam tika izveidots i-konsultācijas portāls."
+    "aboutDesc": "Cilvēkam, kurš plāno strādāt jaunā sfērā vai uzskākt biznesu, bieži vien rodas jautājumi, kurus gribētu uzdot cilvēkam, kas kaut ko sasniedza noteiktā sfērā. Šim nolūkam tika izveidots i-konsultācijas portāls.",
+
+    "listSearch": "Meklēt",
+    "listCategory": "Izvēlēties kategoriju",
+    "listAll": "Visas",
+    "listNothingFound": "Neviens eksperts netika atrasts",
+    "listReadMore": "Lasīt vairāk",
+
+    "showBack": "Atpakaļ",
+    "showOrder": "Paņemt konsultāciju"
 }

@@ -28,3 +28,20 @@ p {
     line-height: 1.8;
     font-size: 2rem;
 }
+
+.text {
+    &--smaller {
+        font-size: 1.2rem;
+    }
+    
+    &--small {
+        font-size: 1.3rem;
+        font-weight: 300;
+        line-height: 1.6;
+    }
+
+    &--medium {
+        font-size: 1.6rem;
+        line-height: 1.6;
+    }
+}

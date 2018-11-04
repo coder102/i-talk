@@ -15,14 +15,16 @@
     <div class="list__search">
         <div class="container">
 
-            <label for="search">Meklēt</label>
-            <input type="text" id="search">
+            <label for="search" translate="listSearch"></label>
+            <input type="text" id="search" ng-model="search" class="input mlr15">
 
-            <label for="category">Izvēlēties kategoriju</label>
-            <select ng-model="category" class="" name="" id="category">
-                <option value="">Viss</option>
-                <option ng-repeat="category in list" value="{{category.name}}">{{category.name}}</option>
+            <label for="category" translate="listCategory"></label>
+            <select ng-model="category" class="select ml15" name="" id="category">
+                <option value="" translate="listAll"></option>
+                <option ng-repeat="category in list[lang]" value="{{category.name}}">{{category.name}}</option>
             </select>
+
+            <a ng-click="search = ''; category = ''" class="text--small ml10" href="#">Clear</a>
 
         </div>
     </div>
@@ -30,13 +32,17 @@
     <div class="container">
 
         <div class="mt20">
-            <div ng-repeat="(categoryIndex, category) in list | filter:category" class="row mb40">
+            <div ng-repeat="(categoryIndex, category) in list[lang] | filter: {name: category}" class="row mb40">
 
                 <div class="col-12 mb20">
                     <h3>{{category.name}}</h3>
+
+                    <div ng-show="(category.experts | filter:search).length === 0" class="mt15">
+                        <p class="text--smaller" translate="listNothingFound"></p>
+                    </div>
                 </div>
 
-                <div ng-repeat="(expertIndex, expert) in category.experts" class="col-md-12 list__item mb30">
+                <div ng-repeat="(expertIndex, expert) in category.experts | filter:search" class="col-md-12 list__item mb30">
                     <div class="list__item__image" style="background-image: url({{expert.image || defaultImageSrc}})"></div>
 
                     <div class="list__item__text">
@@ -44,7 +50,7 @@
                         <div class="list__item__text__headings">
 
                             <div>
-                                <h6>{{expert.name}} <span>{{expert.lang ? '(' + expert.lang + ')': null}}</span></h6>
+                                <h6>{{expert.name}} <span class="text--smaller">{{expert.lang ? '(' + expert.lang + ')': null}}</span></h6>
                                 <h5 class="mtb10">{{expert.career}} ({{category.name}})</h5>
                             </div>
 
@@ -55,16 +61,16 @@
                                     <li ng-repeat="star in (5 - expert.stars) | loop" class="stars__star"><i class="stars__star--o fa fa-star-o"></i></li>
                                 </ul>
 
-                                <span>({{expert.ratings}})</span>
+                                <span class="text--smaller">({{expert.ratings}})</span>
                             </div>
 
                         </div>
 
-                        <p>{{expert.desc | limitTo: 160}}{{expert.desc.length > 160 ? '...' : null}}</p>
+                        <p class="text--medium mb10">{{expert.desc | limitTo: 160}}{{expert.desc.length > 160 ? '...' : null}}</p>
 
-                        <p ng-show="expert.desc2" class="desc--small"><b>Par mani:</b> {{expert.desc2 | limitTo:160}}{{expert.desc2.length > 160 ? '...' : null}}</p>
+                        <p ng-show="expert.desc2" class="text--small list__item__text__desc-small">{{expert.desc2 | limitTo:160}}{{expert.desc2.length > 160 ? '...' : null}}</p>
 
-                        <a href="/view/{{categoryIndex}}/{{expertIndex}}" class="button">Lasīt vairāk</a>
+                        <a href="/view/{{categoryIndex}}/{{expertIndex}}" class="button button--small button--fill" translate="listReadMore"></a>
                     </div>
 
                 </div>

@@ -9,10 +9,19 @@
     "heroTitle": "Talk with an expert",
     "heroTitleInner": "All experts",
     "heroExpert": "Expert",
-    "heroSpan": "And get experience",
-    "heroBtn": "Read about experts",
+    "heroSpan": "And get invaluable experience",
+    "heroBtn": "Show experts",
 
     "aboutSpan": "I-Talk",
     "aboutTitle": "Who needs conversation with an expert?",
-    "aboutDesc": "People who plan to start working in any sphere, starting business have a lot of questions. This is reason why I-Talk was made."
+    "aboutDesc": "People who plan to start working in any sphere, starting business have a lot of questions. This is reason why I-Talk was made.",
+
+    "listSearch": "Search",
+    "listCategory": "Choose category",
+    "listAll": "All",
+    "listNothingFound": "No experts were found",
+    "listReadMore": "Read more",
+
+    "showBack": "Back",
+    "showOrder": "Take 30 minute"
 }

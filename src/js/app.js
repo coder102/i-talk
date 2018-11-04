@@ -36,8 +36,8 @@ app.config([
 // ---------------- Factories --------------
 // =========================================
 app.factory('expertsFactory', function() {
-    return [
-        {
+    return {
+        lv: [{
             name: 'IT',
             experts: [
                 {
@@ -73,8 +73,45 @@ app.factory('expertsFactory', function() {
                     ratings: 0
                 }
             ]
-        }
-    ];
+        }],
+        en: [{
+            name: 'IT',
+            experts: [
+                {
+                    name: 'Maxim',
+                    career: 'Web programmer',
+                    lang: 'LV/RU/EN',
+                    image: '/public/img/experts/maksims.jpg',
+                    desc: 'We will make plan how you can become web developer within 3-6 months.',
+                    desc2: 'Got my first job as Frontend Developer when I was 18 years old.',
+                    stars: 4,
+                    ratings: 1
+                },
+                {
+                    name: 'Mihail',
+                    career: 'Web designer',
+                    image: '/public/img/experts/michael.jpg',
+                    desc: 'We can talk about my job, responsibilities, pros and cons being web designer.',
+                    stars: 4.5,
+                    ratings: 4
+                }
+            ]
+        },
+        {
+            name: "Business",
+            experts: [
+                {
+                    name: 'Vadim Karisov',
+                    career: 'SIA "Credo Autoprieks" director',
+                    image: '/public/img/experts/vadims.jpg',
+                    desc: 'Can tell you how it is to be a director.',
+                    desc2: 'I am director for 2 years',
+                    stars: 0,
+                    ratings: 0
+                }
+            ]
+        }]
+    }
 });
 
 // =========================================
@@ -104,15 +141,15 @@ app.controller('main', ['$scope', 'expertsFactory', '$translate', function ($sco
     $scope.changeLanguage = function (langKey) {
         $translate.use(langKey);
         $scope.lang = langKey;
-    }
+    };
 
 }]);
 
 app.controller('showCtrl', ['$scope', '$routeParams', 'expertsFactory', function ($scope, $routeParams, expertsFactory) {
     var categoryId = $routeParams.categoryId,
         expertId = $routeParams.expertId,
-        list = expertsFactory,
-        expert = list[categoryId].experts[expertId];
+        // TODO: return in view expertsFactory and write in view expertsFactory[lang] for binding
+        expert = expertsFactory[$scope.lang][categoryId].experts[expertId];
 
     $scope.expert = expert;
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{lang}}" ng-app="app">
+<html ng-controller="main" lang="{{lang}}" ng-app="app">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="public/style.min.css">
 </head>
 
-<body ng-controller="main">
+<body>
 
     <header class="header js-header">
         <div class="header__inner container">
@@ -35,9 +35,18 @@
 
                     <li class="header__nav__item"><a href="/apply" translate="navApply"></a></li>
 
-                    <li class="header__nav__item"><a ng-click="changeLanguage('lv')" ng-show="lang == 'en'">LV</a></li>
+                    <li class="header__nav__item">
+                        <a ng-click="changeLanguage('lv')" ng-show="lang == 'en'" href="#">
+                            <img src="public/img/flag-lv.jpg" width="23" alt="English">
+                        </a>
+                    </li>
 
-                    <li class="header__nav__item"><a ng-click="changeLanguage('en')" ng-show="lang == 'lv'">EN</a></li>
+                    <li class="header__nav__item">
+                        <a ng-click="changeLanguage('en')" ng-show="lang == 'lv'" href="#">
+                            <img src="public/img/flag-en.png" width="23" alt="Latvian">
+                        </a>
+                    </li>
+
                 </ul>
             </nav>
 
